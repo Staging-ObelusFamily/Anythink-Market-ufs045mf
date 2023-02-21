@@ -5,7 +5,7 @@ var Comment = mongoose.model("Comment");
 var User = mongoose.model("User");
 var auth = require("../auth");
 const { sendEvent } = require("../../lib/event");
-const { generateImage } = require("../../lib/image-generator");
+const { generateImage } = require("../../lib/gen");
 
 
 // Preload item objects on routes with ':item'
@@ -15,7 +15,7 @@ router.param("item", function(req, res, next, slug) {
     .then(function(item) {
       if (!item) {
         return res.sendStatus(404);
-      }
+    }
 
       req.item = item;
 
