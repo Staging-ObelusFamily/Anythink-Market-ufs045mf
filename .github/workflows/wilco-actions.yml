@@ -36,7 +36,7 @@ jobs:
         with:
           secrets: ${{ toJSON(secrets) }}
 
-      - name: Run checks
+      - name: Setup Node for Wilco Checks
         uses: actions/setup-node@v3
         with:
           node-version: "16"
